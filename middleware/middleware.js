@@ -4,16 +4,28 @@ const Authentication = require('../model/AuthenticationModel')
 
 var authenticate = async (req, res, next) => {
     console.log('Entering authentication')
-    let token = req.headers.Authorization
+    if (!req.headers.api_key) {
+        res.status(400).send({
+            status: 400,
+            data: {},
+            error: {
+                msg: "Missing api_key in headers"
+            }
+        })
+        return;
+    }
+
+    let token = req.headers.api_key
+    console.log('api-key', token)
+
+    // if token exist then returns the respose
     let tokenResponse = await Authentication.findOne({
         token
     })
-
-    // if token exist then returns the respose
     if (tokenResponse) {
         console.log("token found")
         next()
-    }else{
+    } else {
         res.status(401).send({
             status: 401,
             data: {},

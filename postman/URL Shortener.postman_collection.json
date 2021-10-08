@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "daf4cb84-f8e2-4459-a895-700997868706",
+		"name": "URL Shortener",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate API-KEY for authentication",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mukundmy23@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/generate/api-key",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"generate",
+						"api-key"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Generate API-KEY for authentication",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mukundmy23@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/generate/api-key",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"generate",
+								"api-key"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-Fl0QBLuidYF7ZZ2VFp6BRmhiGf8\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Oct 2021 07:57:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"api_key\": \"0C5svJAeouX9WdU1ZwhU4Y2k\"\n    },\n    \"error\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "URL Shortener ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api_key",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"longUrl\": \"https://www.cybrilla.com/careers.html\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/url/shorten",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "URL Shortener ",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api_key",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"longUrl\": \"https://www.cybrilla.com/careers.html\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/url/shorten",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"url",
+								"shorten"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4f-ypYdWhkoTN/TV8SjNniOe0euJoM\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Oct 2021 09:13:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"shortUrl\": \"http://localhost:3000/zIiFPTdpG\"\n    },\n    \"error\": {}\n}"
+				}
+			]
+		}
+	]
+}

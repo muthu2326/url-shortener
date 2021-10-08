@@ -18,6 +18,20 @@ npm install
 
 nodemon npm start
 
+## Postman
+
+Please find the postman in below path 
+
+Note: Examples are available for the APIs
+
+### Environment PATH
+
+./postman/URL Shortener.postman_environment.json
+
+### Collection PATH
+
+./postman/URL Shortener.postman_collection.json
+
 
 ## API Specifications
 
@@ -35,3 +49,8 @@ nodemon npm start
 * Headers: Authorization - API-KEY
 * Request Payload: longUrl
 * Response: shortUrl
+
+### Note: 
+
+1. Node Server must be running
+2. After converting the original url we can paste the short url either in the browser or postman (GET method) to redirect to the original url 
