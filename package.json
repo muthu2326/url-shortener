@@ -1,0 +1,24 @@
+{
+  "name": "url-shortener",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "mongoose": "^6.0.9",
+    "morgan": "~1.9.1",
+    "node-url-shortener": "^2.0.0",
+    "pug": "2.0.0-beta11",
+    "rand-token": "^1.0.1",
+    "shortid": "^2.2.16",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
