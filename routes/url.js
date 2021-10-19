@@ -6,6 +6,7 @@ const validUrl = require('valid-url')
 var shortURL = require('node-url-shortener');
 const shortid = require('shortid')
 const suid = require('rand-token').suid
+const {generateUniqueUrlCode} = require("../util/util")
 
 // import the Url database model
 const Url = require('../model/UrlModel')
@@ -71,14 +72,19 @@ router.post('/url/shorten', authenticate, async (req, res) => {
     // check long url if valid using the validUrl.isUri method
     if (validUrl.isUri(longUrl)) {
 
-        const urlCode = shortid.generate()
-        console.log(urlCode);
+        // const urlCode = shortid.generate()
+
+        let urlCode = await generateUniqueUrlCode();
+
+        console.log("Got URL Code", urlCode);
+
         try {
+
             let url = await Url.findOne({
                 longUrl
             })
 
-            // url exist and return the respose
+            // url exist and return the response
             if (url) {
                 console.log()
                 res.json({

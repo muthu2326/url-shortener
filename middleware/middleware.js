@@ -18,7 +18,7 @@ var authenticate = async (req, res, next) => {
     let token = req.headers.api_key
     console.log('api-key', token)
 
-    // if token exist then returns the respose
+    // if token exist then returns the response
     let tokenResponse = await Authentication.findOne({
         token
     })
